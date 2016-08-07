@@ -9,3 +9,35 @@ Una colección de todos los cambios que vienen en Swift 3 y que afectan a la app
 ### `API.swift`
 
 `UserDefaults.standard.object(forKey: "username")` **->** `NSUserDefaults.standardUserDefaults().objectForKey("username")`
+
+`UserDefaults.standard.set(newUsername, forKey: "username")` **->** `NSUserDefaults.standardUserDefaults().setObject(newUsername, forKey: "username")`
+
+`UUID().uuidString` **->** `NSUUID().UUIDString`
+
+`return (uuid as NSString).substring(to: 5)` **->** `return (uuid as NSString).substringToIndex(5)`
+
+`URLSession.shared` **->** `NSURLSession.sharedSession()`
+
+`URL(string: "https://pendientesapp.herokuapp.com/todo")!` **->** `NSURL(string: "https://pendientesapp.herokuapp.com/todo")!`
+
+`NSMutableURLRequest(url: url)` **->** `NSMutableURLRequest(URL: url)`
+
+`request.httpMethod = "POST"` **->** `request.HTTPMethod = "POST"`
+
+`DateFormatter()` **->** `NSDateFormatter()`
+
+`dictionary["dueDate"] = formatter.string(from: date as Date)` **->** `dictionary["dueDate"] = formatter.stringFromDate(date)`
+
+`dictionary["id"] = NSNumber(value: identifier)` **->** `dictionary["id"] = NSNumber(longLong: identifier)`
+
+`JSONSerialization.data(withJSONObject: dictionary, options:  JSONSerialization.WritingOptions.prettyPrinted)` **->** `SJSONSerialization.dataWithJSONObject(dictionary, options:  NSJSONWritingOptions.PrettyPrinted)`
+
+`String.Encoding.utf8.rawValue` **->** `NSUTF8StringEncoding`
+
+`request.httpBody` **->** `request.HTTPBody`
+
+`session.dataTask(with: request)` **->** `session.dataTaskWithRequest(request)`
+
+`JSONSerialization.jsonObject(with: r, options: JSONSerialization.ReadingOptions.allowFragments)` **->** `NSJSONSerialization.JSONObjectWithData(r, options: NSJSONReadingOptions.AllowFragments)`
+
+`DispatchQueue.main.async {responseBlock(err)}` **->** `dispatch_async(dispatch_get_main_queue()) {responseBlock(err)}`
