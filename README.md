@@ -41,3 +41,15 @@ Una colección de todos los cambios que vienen en Swift 3 y que afectan a la app
 `JSONSerialization.jsonObject(with: r, options: JSONSerialization.ReadingOptions.allowFragments)` **->** `NSJSONSerialization.JSONObjectWithData(r, options: NSJSONReadingOptions.AllowFragments)`
 
 `DispatchQueue.main.async {responseBlock(err)}` **->** `dispatch_async(dispatch_get_main_queue()) {responseBlock(err)}`
+
+### `AppDelegate.swift`
+
+`UIUserNotificationSettings(types: [.alert, .badge], categories: nil)` **->** `UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)`
+
+`UIApplication.shared.registerUserNotificationSettings(settings)` **->** `UIApplication.sharedApplication().registerUserNotificationSettings(settings)`
+
+`UIApplication.shared.registerForRemoteNotifications()` **->** `UIApplication.sharedApplication().registerForRemoteNotifications()`
+
+` UIApplication.shared.applicationIconBadgeNumber = 0;` **->** `UIApplication.sharedApplication().applicationIconBadgeNumber = 0;`
+
+`func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings)` **->** ` func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings)`
